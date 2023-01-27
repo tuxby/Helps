@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Helps - Заявка</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<main class="container col-8">
+    <div class="bg-light rounded p-3">
+        <form method="POST">
+            <div class="form-row m-2">
+<!--                <label for="title" class="fw-bold m-2" th:text="'Заявка №'+${requestModel.getId()}"></label>-->
+                <label for="title" class="fw-bold m-2">Заявка</label>
+                <input id="title" class="form-control full-width" type="text" name="title" placeholder="Заголовок запроса" readonly>
+
+                <label for="text-content" class="fw-bold  m-2" >Текст запроса</label>
+                <textarea class="form-control" id="text-content" rows="8" name="text" th:text="${requestModel.getText()}" readonly></textarea>
+
+<!--                <input type="hidden" name="login" th:value="${#authentication.name}">-->
+            </div>
+        </form>
+
+        <label for="title" class="fw-bold mb-1 mt-3">Варианты решений</label>
+        <tr th:each="i:${responseList}">
+            <td>
+                <div >
+                    <label name="request_id" type="hidden" class="fw-bold mb-4" th:value="${requestModel.getId()}"></label>
+                    <textarea class="form-control" rows="8" name="text" th:text="${i.getText()}" readonly></textarea>
+                    <label class="fw-bold mt-mb-4" th:text="${i.getStatus()}"></label>
+                    <div sec:authorize="hasRole('USER')">
+                        <div th:if="${i.getStatus() == 'В ожидании'}" >
+                            <form method="POST" id="ACCEPTED" >
+                                <input type="hidden" name="response_id" th:value="${i.getId()}">
+                                <input type="hidden" name="status" value="Принято">
+                                <button type="submit" form="ACCEPTED" class="btn btn-primary mt-2">Принято</button>
+                            </form>
+                            <form method="POST" id="REJECTED" >
+                                <input type="hidden" name="response_id" th:value="${i.getId()}">
+                                <input type="hidden" name="status" value="Отклонено">
+                                <button type="submit" form="REJECTED" class="btn btn-primary mt-2">Отклонить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </div>
+</main>
+
+<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+</body>
+</html>

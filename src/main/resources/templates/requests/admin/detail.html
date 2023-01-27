@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Helps - Заявка</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<main class="container col-8">
+    <div class="bg-light rounded p-3">
+        <form class="border-primary">
+            <div class="form-row m-2 ">
+                <a href="/requests/admin/new" class="btn btn-outline-secondary mb-4"> Вернуться к новым заявкам</a>
+                <br>
+                <label for="title" class="fw-bold mb-4" th:text="'Заявка №'+${model.getId()}">Заявка</label>
+                <input id="title" class="form-control full-width mb-4" type="text" name="title" placeholder="Заголовок запроса" readonly>
+
+                <label for="text-content" class="fw-bold  mb-4" >Текст запроса</label>
+                <textarea class="form-control" id="text-content" rows="8" name="text" th:text="${model.getText()}" readonly></textarea>
+<!--                <button type="submit" class="btn btn-primary mt-2"> Взять в работу </button>-->
+<!--                <input type="hidden" name="login" th:value="${#authentication.name}">-->
+            </div>
+        </form>
+
+        <label for="title" class="fw-bold mb-1 mt-3">Варианты решений</label>
+        <tr th:each="i:${responseList}">
+            <td>
+                <form >
+                    <label name="request_id" type="hidden" class="fw-bold mb-4" th:value="${model.getId()}"></label>
+                    <textarea class="form-control" rows="8" name="text" th:text="${i.getText()}" readonly></textarea>
+                    <label class="fw-bold mt-mb-4" th:text="${i.getStatus()}"></label>
+                </form>
+            </td>
+        </tr>
+        <div th:if="${model.getStatus() != 'Завершено'}" >
+            <form method="POST">
+                <div class="form-row m-4">
+                    <label name="request_id" type="hidden" class="fw-bold mb-4" th:value="${model.getId()}"></label>
+                    <label for="title" class="fw-bold mt-mb-4">Ответ на запрос:</label>
+                    <textarea name="text" class="form-control" rows="8"  placeholder="Текст ответа"></textarea>
+
+                    <button type="submit" class="btn btn-primary mt-2" >Отправить на одобрение</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+</body>
+</html>
