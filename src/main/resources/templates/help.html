@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Helps - Помощь</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<main class="container col-8">
+    <div class="bg-light rounded p-3">
+        <h1 class="display-6 fw-bold">Помощь</h1>
+        <p class="col-md-8 fs-4">Для возможности подачи заявок в системе, необходимо зарегистрироваться.</p>
+        <p class="col-md-8 fs-4">После регистрации необходимо произвести вход на сайт.</p>
+        <p class="col-md-8 fs-4">При успешном входе у пользователя появляются дополнительные кнопки в главном меню.</p>
+    </div>
+</main>
+
+<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Helps - Пользователи системы</title>
+
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<main class="container col-10">
+  <div class="bg-light rounded p-3">
+    <h1 class="display-6 fw-bold">Пользователи системы</h1>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Логин</th>
+          <th scope="col">Имя</th>
+          <th scope="col">Email</th>
+          <th scope="col">Роль</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="i:${userList}">
+          <a th:href="'/users/'+${i.getId()}">
+            <td th:text="${i.getId()}"></td>
+            <td th:text="${i.getLogin()}"></td>
+            <td th:text="${i.getName()}"></td>
+            <td th:text="${i.getEmail()}"></td>
+            <td th:text="${i.getRole()}"></td>
+            <td >
+<!--              <a class="btn btn-secondary my-2" th:href="'/users/del/'+${i.getId()}" role="button">удалить</a>-->
+<!--              <a class="btn btn-secondary my-2" th:href="'/users/'+${i.getId()}" role="button">Просмотр</a>-->
+            </td>
+          </a>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+</body>
+</html>

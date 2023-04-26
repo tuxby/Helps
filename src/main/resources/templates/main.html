@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Helps - Главная</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<main class="container">
+
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-6 fw-normal fw-bold">Helps - №1 инструмент техподдержки пользователей</h1>
+    <p class="fs-5 text-muted">Это лучшая CRM на планете, по более 1000000 отзывам пользователей по всему миру)</p>
+  </div>
+   <div class="pricing-header p-3 pb-md-4 mx-auto text-center border-top">
+     <h1 class="display-6 fw-normal mt-md-2">Почему все выбирают Helps ?</h1>
+     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+       <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+     </svg>
+   </div>
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm  border-primary">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Простота</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>всё интуитивно понятно</li>
+            <li>приятная цветовая схема</li>
+            <li>простые формы заявок</li>
+            <li>простая регистрация</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm  border-primary">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Удобство</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>удобное меню</li>
+            <li>нет лишних кнопок</li>
+            <li>удобный просмотр заявок</li>
+            <li>нет рекламы</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm  border-primary">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Стабильность</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Java - лучший язык для корпоративных приложений</li>
+            <li>Postgresql - лучшая SQL база данных для нагруженных систем</li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="list-group w-auto">
+    <a href="https://github.com/tuxby/Helps" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          <h6 class="mb-0">Этот проект на GitHub</h6>
+          <p class="mb-0 opacity-75">Данное приложение разработано в целях обучения по разработке приложений на Java (Spring, Spring Security, JPA, Thymeleaf)</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="list-group w-auto mt-2 mb-2">
+    <div class="list-group-item list-group-item-action d-flex gap-3 py-3 border-danger" aria-current="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-exclamation" viewBox="0 0 16 16">
+        <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+        <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0V11a.5.5 0 0 0-.5-.5Zm0 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"/>
+      </svg>
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          <h6 class="mb-0">Demo аккаунты в системе для обзора возможностей</h6>
+          <p class="mb-0 opacity-75">admin - Admin123</p>
+          <p class="mb-0 opacity-75">user - User123</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+</body>
+</html>
