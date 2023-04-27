@@ -1,2 +1,2 @@
 *.html linguist-detectable=false
-*.java linguist-language=Java/HTML/Thymleaf
+*.java linguist-language=Java-HTML-Thymleaf
