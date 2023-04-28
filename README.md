@@ -1,6 +1,6 @@
 Helps  (Support CRM)
 
-Demo application:<br>
+Demo version of the application is available at:<br>
 https://tuxxx.ddns.net/helps/ <br>
 https://8868598.ddns.net/helps/
 
